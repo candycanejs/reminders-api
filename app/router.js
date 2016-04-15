@@ -9,5 +9,20 @@ export default class AppRouter extends Router {
    */
   registerRoutes() {
     this.get(`/`, `version`);
+
+    this.post(`/info`, `info`);
+    this.post(`/insert`, `insert-list`);
+
+    this.get(`/lists`, 'lists/index');
+    this.post(`/lists`, 'lists/create');
+    this.get(`/lists/:id`, 'lists/show');
+    this.patch(`/lists/:id`, 'lists/update');
+    this.delete(`/lists/:id`, 'lists/destroy');
+
+    this.get(`/reminders`, 'reminders/index');
+    this.post(`/reminders`, 'reminders/create');
+    this.get(`/reminders/:id`, 'reminders/show');
+    this.patch(`/reminders/:id`, 'reminders/update');
+    this.delete(`/reminders/:id`, 'reminders/destroy');
   }
 }
